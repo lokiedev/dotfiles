@@ -1,15 +1,17 @@
 * {
 	font-family: JetBrainsMonoNL Nerd Font;
 	font-size: 13px;
+	font-weight: bold;
+	border-radius: 100;
 }
 
 window#waybar {
-	background-color: rgba(27, 29, 34, 0.4);
+	background-color: rgba(27, 29, 34, 0.17);
 	color: #ffffff;
 }
 
 window#waybar > box {
-	padding: 0 12px 0 12px;
+	padding: 5px 15px 5px 15px;
 }
 
 button {
@@ -24,9 +26,13 @@ button:hover {
 }
 
 #workspaces button {
-	padding: 0 5px;
 	background-color: transparent;
 	color: #ffffff;
+}
+
+#workspaces button.active {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 100;
 }
 
 #workspaces button:hover {

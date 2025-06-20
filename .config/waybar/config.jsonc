@@ -1,53 +1,55 @@
 {
-	"height": 30,
-	"spacing": 20,
+  "height": 30,
+  "spacing": 20,
+  "margin-top": 5,
+  "margin-left": 8,
+  "margin-right": 8,
 
-	"modules-left": [
-		"clock",
-		"custom/launcher"
-	],
-	"modules-center": [
-		"hyprland/workspaces"
-	],
-	"modules-right": [
-		"pulseaudio",
-		"battery",
-		"network"
-	],
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/launcher"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "network"
+  ],
 
-	"clock": {
-		"format": "{:%Y-%m-%d  %H:%M}",
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-	},
-	"hyprland/workspaces": {
-		"format": "{id}",
-		"active-only": true
-	},
-	"battery": {
-		"format": "{icon} {capacity}%",
-		"format-full": "{icon} {capacity}%",
-		"format-icons": ["", "", "", "", ""],
-		"states": {
-			"critical": 15
-		}
-	},
-	"network": {
-		"format": "{ifname}",
-		"format-wifi": " ",
-		"format-ethernet": "{ipaddr}/{cidr}",
-		"format-linked": "Linked {ifname} (No IP)",
-		"format-disconnected": "⚠",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}",
-		"tooltip-format": "{essid}"
-	},
-	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": "  {volume}%",
-		"format-source-muted": "  {volume}%",
-		"format-icons": {
-			"default": [" "]
-		},
-	}
+  "clock": {
+    "format": "{:%b %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/workspaces": {
+    "format": "{id}"
+  },
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "critical": 15
+    }
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " ",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-linked": "Linked {ifname} (No IP)",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "  {volume}%",
+    "format-source-muted": "  {volume}%",
+    "format-icons": {
+      "default": [" "]
+    }
+  }
 }
