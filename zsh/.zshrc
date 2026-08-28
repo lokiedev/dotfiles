@@ -9,6 +9,8 @@ export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
 export EDITOR="nvim"
 
+export GPG_TTY=$(tty)
+
 #--- Setup proper cursor ---#
 
 bindkey -v
