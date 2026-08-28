@@ -1,0 +1,7 @@
+[plugin]
+deps = []
+
+[[flavor.deps]]
+use = "vague-theme/vague"
+rev = "b44fd1d"
+hash = "2fdf904deffebf9c60b10d9c3f877f38"

@@ -1,0 +1,27 @@
+# Sets sane Zsh built-in environment options.
+zmodule environment
+
+# Applies correct bindkeys for input events. Add one of the following to the
+# beginning of your ~/.zshrc to set your preferred editor keymap to emacs or vi
+# respectively: bindkey -e or bindkey -v
+zmodule input
+
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+# <-- Normally new modules should be added here. Check each module documentation
+# for any caveats.
+
+zmodule Ansimorph/oblong
+
+#--- Prompt ---#
+
+# Exposes how long the last command took to run to prompts.
+zmodule duration-info
+# Exposes git repository status information to prompts.
+zmodule git-info
+
+#--- Modules that must be initialized last ---#
+
+# Fish-like syntax highlighting for Zsh, must be sourced after completion.
+zmodule zsh-users/zsh-syntax-highlighting

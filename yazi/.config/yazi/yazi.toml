@@ -1,0 +1,6 @@
+[mgr]
+# Shows hidden files by default
+show_hidden=true
+
+# Shows file size
+linemode="size"
