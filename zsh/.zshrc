@@ -15,7 +15,7 @@ export GPG_TTY=$(tty)
 
 bindkey -v
 
-function zle-keymap-select() {
+function set_cursor() {
 	if [[ $KEYMAP == vicmd ]]; then
 		print -n '\e[2 q'
 	else
@@ -23,7 +23,14 @@ function zle-keymap-select() {
 	fi
 }
 
+function zle-keymap-select() {
+	set_cursor
+}
+
 zle -N zle-keymap-select
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd set_cursor
 
 #--- System information ---#
 
