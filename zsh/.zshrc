@@ -3,7 +3,11 @@
 source ~/.config/zsh/setup-zim.zsh
 source ~/.config/zsh/setup-android.zsh
 source ~/.config/zsh/setup-rust.zsh
+source ~/.config/zsh/setup-zig.zsh
 source ~/.config/zsh/setup-yazi.zsh
+
+# Not tracked by git
+source ~/.config/zsh/setup-local.zsh
 
 export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
@@ -37,3 +41,4 @@ add-zsh-hook precmd set_cursor
 echo "\n"
 fastfetch
 echo "\n"
+export PATH=$HOME/.local/bin:$PATH
