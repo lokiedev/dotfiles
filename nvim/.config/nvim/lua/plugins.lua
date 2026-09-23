@@ -63,6 +63,7 @@ conform_nvim.setup({
 		lua = { "stylua" },
 		html = { "superhtml" },
 		php = { "pint" },
+		zig = { "zigfmt" },
 	},
 
 	format_on_save = {
@@ -85,10 +86,37 @@ local mini_pick = require("mini.pick")
 local mini_pick_builtin = mini_pick.builtin
 
 mini_pick.setup({})
-vim.keymap.set("n", "<leader>pf", mini_pick_builtin.files)
-vim.keymap.set("n", "<leader>pg", mini_pick_builtin.grep)
-vim.keymap.set("n", "<leader>pl", mini_pick_builtin.grep_live)
-vim.keymap.set("n", "<leader>ph", mini_pick_builtin.help)
-vim.keymap.set("n", "<leader>pb", mini_pick_builtin.buffers)
-vim.keymap.set("n", "<leader>pc", mini_pick_builtin.cli)
-vim.keymap.set("n", "<leader>pr", mini_pick_builtin.resume)
+
+vim.keymap.set("n", "<leader>pfg", function()
+	mini_pick_builtin.files({ tool = "git" })
+end, { desc = "Pick file with git" })
+vim.keymap.set("n", "<leader>pff", function()
+	mini_pick_builtin.files({ tool = "fd" })
+end, { desc = "Pick file with fd" })
+vim.keymap.set("n", "<leader>pfr", function()
+	mini_pick_builtin.files({ tool = "rg" })
+end, { desc = "Pick file with ripgrep" })
+vim.keymap.set("n", "<leader>pg", mini_pick_builtin.grep, { desc = "Pick grep" })
+vim.keymap.set("n", "<leader>pl", mini_pick_builtin.grep_live, { desc = "Pick grep live" })
+vim.keymap.set("n", "<leader>ph", mini_pick_builtin.help, { desc = "Pick help" })
+vim.keymap.set("n", "<leader>pb", mini_pick_builtin.buffers, { desc = "Pick buffers" })
+vim.keymap.set("n", "<leader>pc", mini_pick_builtin.cli, { desc = "Pick CLI" })
+vim.keymap.set("n", "<leader>pr", mini_pick_builtin.resume, { desc = "Resume last pick" })
+
+local mini_clue = require("mini.clue")
+
+mini_clue.setup({
+	triggers = { { mode = { "n", "x" }, keys = "<Leader>" } },
+	clues = {
+		mini_clue.gen_clues.square_brackets(),
+		mini_clue.gen_clues.builtin_completion(),
+		mini_clue.gen_clues.g(),
+		mini_clue.gen_clues.marks(),
+		mini_clue.gen_clues.registers(),
+		mini_clue.gen_clues.windows(),
+		mini_clue.gen_clues.z(),
+	},
+	window = {
+		delay = 100,
+	},
+})
