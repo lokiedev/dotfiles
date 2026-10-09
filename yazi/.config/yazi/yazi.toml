@@ -4,3 +4,17 @@ show_hidden=true
 
 # Shows file size
 linemode="size"
+
+[opener]
+play = [
+	{ run = "mpv %s", block = true, for = "unix" },
+]
+
+image = [
+	{ run = "gpicview %s1", block = true, for = "unix" },
+]
+
+[open]
+prepend_rules = [
+	{ mime = "image/*", use = "image" },
+]
